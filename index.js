@@ -114,7 +114,7 @@ const search = (url, disableOrder = false, allowSwap = false, customParams = {})
             res.text().then((text) => {
                 controller.abort();
                 try {
-                    resolve(JSON.parse(text));
+                    resolve(JSON.parse(JSON.stringify(text)));
                 } catch (e) {
                     reject(text);
                 }
